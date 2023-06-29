@@ -3,7 +3,7 @@ package org.example;
 
 import java.util.Random;
 
-public class Sniper extends BaseHero{
+public class Sniper extends BaseHero {
     public Sniper(String name) {
         super(hp = 100,
                 damage = 60,
@@ -12,5 +12,9 @@ public class Sniper extends BaseHero{
                 blockChance = new Random().nextDouble(.01f, 1),
                 name = name,
                 attackDistance = 10);
+    }
+    @Override
+    public String getInfo() {
+        return super.getInfo();
     }
 }
