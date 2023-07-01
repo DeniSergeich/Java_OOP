@@ -20,11 +20,16 @@ public class Main {
         ArrayList<BaseHero> teamTwo = new ArrayList<>();
         fillList(teamOne);
         fillList(teamTwo);
+        System.out.println("Команда 1:");
+        System.out.println();
         for (BaseHero c:
                 teamOne) {
             System.out.println(c.getInfo());
         }
-        System.out.println("------------------------");
+
+        System.out.println();
+        System.out.println("Команда 2:");
+        System.out.println();
         for (BaseHero c:
                 teamTwo) {
             System.out.println(c.getInfo());
