@@ -22,7 +22,7 @@ public abstract class BaseHero implements BaseHeroInterfase{
         this.name = name;
     }
     public String getInfo() {
-        return String.format("Name: %s  Hp: %d ",
+        return String.format("Имя: %s  Hp: %d ",
                 this.name, this.hp);
     }
 

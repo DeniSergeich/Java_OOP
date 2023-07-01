@@ -20,6 +20,6 @@ public class Magician extends BaseHero {
     }
     @Override
     public String getInfo() {
-        return String.format("%s  Mana: %d",super.getInfo(), this.mana);
+        return String.format("%s  Mp: %d",super.getInfo(), this.mana);
     }
 }

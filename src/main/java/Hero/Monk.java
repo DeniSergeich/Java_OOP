@@ -23,6 +23,6 @@ public class Monk extends BaseHero {
     }
 
     public String getInfo() {
-        return String.format("%s  Mana: %d",super.getInfo(), this.mana);
+        return String.format("%s  Mp: %d",super.getInfo(), this.mana);
     }
 }
