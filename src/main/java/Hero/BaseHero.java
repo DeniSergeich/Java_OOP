@@ -1,7 +1,5 @@
 package Hero;
 
-import java.util.Random;
-
 public abstract class BaseHero implements BaseHeroInterfase{
     protected int maxHp;
     protected int hp;

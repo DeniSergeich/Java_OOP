@@ -1,4 +1,5 @@
 package Hero;
+
 import java.util.Random;
 
 public class Spearman extends BaseHero {

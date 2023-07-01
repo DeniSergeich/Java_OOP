@@ -1,5 +1,3 @@
-//Арбалетчик, дистанция средняя, высокий урон
-
 package Hero;
 
 import java.util.Random;

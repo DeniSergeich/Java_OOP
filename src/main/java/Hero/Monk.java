@@ -1,8 +1,4 @@
-//Монах лечит всех на поле боя
-
 package Hero;
-
-import Hero.BaseHero;
 
 import java.util.Random;
 

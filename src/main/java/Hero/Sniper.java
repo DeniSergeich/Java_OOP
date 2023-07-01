@@ -1,7 +1,4 @@
-//Снайпер атакует далеко, но обладает средним уроном
 package Hero;
-
-import Hero.BaseHero;
 
 import java.util.Random;
 
