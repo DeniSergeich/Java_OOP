@@ -7,24 +7,21 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        BaseHero bandit = new Bandit("Разбойник");
-        BaseHero crossbowman = new Crossbowman("Арбалетчик");
-        BaseHero sniper = new Sniper("Снайпер");
-        BaseHero magician = new Magician("Маг");
-        BaseHero monk = new Monk("Монах");
-        BaseHero peasant = new Peasant("Крестьянин");
-        BaseHero spearman = new Spearman("Копейщик");
-
 
         ArrayList<BaseHero> teamOne = new ArrayList<>();
         ArrayList<BaseHero> teamTwo = new ArrayList<>();
-        fillList(teamOne);
-        fillList(teamTwo);
+        fillList(teamOne,0);
+        fillList(teamTwo,9);
+
+        for (BaseHero c: teamOne) {
+            System.out.println();
+        }
+
         System.out.println("Команда 1:");
         System.out.println();
         for (BaseHero c:
                 teamOne) {
-            System.out.println(c.getInfo());
+            c.lookAround(teamTwo);
         }
 
         System.out.println();
@@ -32,44 +29,45 @@ public class Main {
         System.out.println();
         for (BaseHero c:
                 teamTwo) {
-            System.out.println(c.getInfo());
+            c.lookAround(teamOne);
         }
     }
 
 
-    public static void fillList (ArrayList < BaseHero > list) {
+    public static void fillList (ArrayList <BaseHero> list, int xPosition) {
         for (int i = 0; i < 10; i++) {
             int cnt = new Random().nextInt(0, 7);
             switch (cnt) {
                 case 0: {
-                    list.add(new Bandit("Разбойник"));
+                    list.add(new Bandit(xPosition, i));
                     break;
                 }
                 case 1: {
-                    list.add(new Crossbowman("Арбалетчик"));
+                    list.add(new Crossbowman(xPosition, i));
                     break;
                 }
                 case 2: {
-                    list.add(new Magician("Маг"));
+                    list.add(new Magician(xPosition, i));
                     break;
                 }
                 case 3: {
-                    list.add(new Monk("Монах"));
+                    list.add(new Monk(xPosition, i));
                     break;
                 }
                 case 4: {
-                    list.add(new Peasant("Крестьянин"));
+                    list.add(new Peasant(xPosition, i));
                     break;
                 }
                 case 5: {
-                    list.add(new Sniper("Снайпер"));
+                    list.add(new Sniper(xPosition, i));
                     break;
                 }
                 default: {
-                    list.add(new Spearman("Копейщик"));
+                    list.add(new Spearman(xPosition, i));
                     break;
                 }
             }
         }
     }
+
 }

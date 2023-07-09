@@ -1,6 +1,8 @@
 package Hero;
 
+import java.util.ArrayList;
+
 public interface BaseHeroInterfase {
-    void step();
+    void step (ArrayList<BaseHero> team);
     String getInfo();
 }

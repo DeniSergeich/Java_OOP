@@ -1,39 +1,60 @@
 package Hero;
 
+import Map.Coordinates;
+
+import java.util.ArrayList;
+import java.util.Random;
+
 public abstract class BaseHero implements BaseHeroInterfase{
+    protected String name;
+    protected String type;
     protected int maxHp;
     protected int hp;
     protected int damage;
-    protected int armor;
-    protected int satiety;
-    protected double blockChance;
-    protected String name;
-    protected int attackDistance;
-    public BaseHero(int hp, int damage, int armor, int satiety, double blockChance, String name, int attackDistance) {
+    protected int defense;
+    protected int initiative;
+    protected int speed;
+    protected Coordinates coordinates;
+    public BaseHero(int damage, int defense, int initiative, int speed, int hp, int x, int y) {
+        this.name = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
         this.maxHp = this.hp = hp;
         this.damage = damage;
-        this.armor = armor;
-        this.satiety = satiety;
-        this.blockChance = blockChance;
-        this.name = name;
-        this.attackDistance = attackDistance;
+        this.defense = defense;
+        this.initiative = initiative;
+        this.speed = speed;
+        this.coordinates = new Coordinates(x,y);
     }
-    public BaseHero(String name) {
-        this.name = name;
+
+    public BaseHero(int x, int y){
+        this.coordinates = new Coordinates(x,y);
     }
     public String getInfo() {
-        return String.format("Имя: %s  Hp: %d ",
+        return String.format("%s  Hp: %d ",
                 this.name, this.hp);
     }
 
-    public void GetDamage(int damage) {
-        double block = this.armor*(1-this.blockChance);
-        if (this.hp - damage > 0) {
-            this.hp -= ((damage*(this.satiety/100))-block);
+    public String toString(){
+        return this.name;
+    }
+
+    public Coordinates getCoordinates(){
+        return coordinates;
+    }
+
+    public void lookAround(ArrayList<BaseHero> team){
+        BaseHero nearestFoe = findNearest(team);
+        System.out.printf("%s заметил %s на расстоянии %d\n", this.name, nearestFoe.toString(),
+                coordinates.getDistance(nearestFoe.getCoordinates()));
+    }
+
+    protected BaseHero findNearest(ArrayList<BaseHero> team) {
+        BaseHero nearest = team.get(0);
+        for (BaseHero character : team) {
+            if (coordinates.getDistance(character.getCoordinates()) < coordinates.getDistance(nearest.getCoordinates())) {
+                nearest = character;
+            }
         }
+        return nearest;
     }
-    public void Attack(BaseHero target) {
-        int damage = this.damage;
-        target.GetDamage(damage);
-    }
+
 }

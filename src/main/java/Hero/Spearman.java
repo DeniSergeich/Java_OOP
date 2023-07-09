@@ -1,23 +1,21 @@
 package Hero;
 
+import Map.Coordinates;
+
+import java.util.ArrayList;
 import java.util.Random;
 
-public class Spearman extends BaseHero {
+public class Spearman extends Warrior {
 
-    public Spearman(String name){
-        super(name);
-        super.hp = 100;
-        super.damage = 80;
-        super.armor = 20;
-        super.satiety = 100;
-        super.blockChance = new Random().nextDouble(.1f,1);
-        super.name = name;
-        super.attackDistance = 10;
+    public Spearman(int x, int y){
+
+        super(x, y);
+        super.type = "Копейщик";
     }
 
     @Override
-    public void step() {
-
+    public void step(ArrayList<BaseHero> team) {
+        BaseHero nearestFoe = findNearest(team);
     }
 
     @Override

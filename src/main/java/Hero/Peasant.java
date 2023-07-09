@@ -1,24 +1,20 @@
 package Hero;
 
+import Map.Coordinates;
+
+import java.util.ArrayList;
 import java.util.Random;
 
-public class Peasant extends BaseHero {
-    private int food; // запас еды у крестьянина
+public class Peasant extends Warrior {
 
-    public Peasant(String name){
-        super(name);
-        super.hp = 100;
-        super.damage = 80;
-        super.armor = 20;
-        super.satiety = 100;
-        super.blockChance = new Random().nextDouble(.1f,1);
-        super.name = name;
-        super.attackDistance = 10;
-        this.food = 100;
+    public Peasant(int x, int y){
+
+        super(x, y);
+        super.type = "Крестьянин";
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<BaseHero> team) {
 
     }
 

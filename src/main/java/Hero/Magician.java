@@ -1,21 +1,17 @@
 package Hero;
 
-import java.util.Random;
-public class Magician extends BaseHero {
-    private int mana;
-    public Magician(String name){
-        super(name);
-        super.hp = 100;
-        super.damage = 50;
-        super.armor = 20;
-        super.satiety = 100;
-        super.blockChance = new Random().nextDouble(.1f,1);
-        super.name = name;
-        super.attackDistance = 10;
-        this.mana = 100;
+
+import java.util.ArrayList;
+
+public class Magician extends Magic {
+
+    public Magician(int x, int y){
+
+        super(x, y);
+        super.type = "Маг";
     }
     @Override
-    public void step() {
+    public void step(ArrayList<BaseHero> team) {
 
     }
     @Override

@@ -1,20 +1,18 @@
 package Hero;
 
+import Map.Coordinates;
+
+import java.util.ArrayList;
 import java.util.Random;
 
-public class Crossbowman extends BaseHero {
-    public Crossbowman(String name){
-        super(name);
-        super.hp = 100;
-        super.damage = 35;
-        super.armor = 20;
-        super.satiety = 100;
-        super.blockChance = new Random().nextDouble(.1f,1);
-        super.name = name;
-        super.attackDistance = 10;
+public class Crossbowman extends Warrior {
+    public Crossbowman(int x, int y){
+
+        super(x, y);
+        super.type = "Арбалетчик";
     }
     @Override
-    public void step() {
+    public void step(ArrayList<BaseHero> team) {
 
     }
     @Override
