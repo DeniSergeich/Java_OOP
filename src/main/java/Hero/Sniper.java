@@ -11,17 +11,15 @@ public class Sniper extends Shooter {
 
     @Override
     public void step(ArrayList<BaseHero> teamFoe, ArrayList<BaseHero> teamFriend) {
-        if (this.hp == 0 || arrow == 0) return;
-        BaseHero nearestFoe = findNearest(teamFoe);
-        nearestFoe.hp -= (this.damage - this.defense);
-        for (BaseHero c:teamFriend) {
-            if (c.getClass() == Peasant.class) return;
-        }
-        this.arrow -= 1;
+        if (super.hp == 0 || super.arrow ==0) return;
+        //this.lookAround(teamFoe);
+        BaseHero target = this.findNearest(teamFoe);
+        this.attack(target);
+        if(!this.findPeasant(teamFoe)) this.arrow -= 1;
     }
 
     @Override
     public String getInfo() {
-        return String.format("%s Hp:%d Arrows:%d", this.name, this.hp, this.arrow);
+        return String.format("%s %s Hp:%d Arrows:%d",this.type, this.name, this.hp, this.arrow);
     }
 }

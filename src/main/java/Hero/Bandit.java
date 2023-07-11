@@ -12,7 +12,7 @@ public class Bandit extends Warrior {
 
     @Override
     public void step(ArrayList<BaseHero> teamFoe, ArrayList<BaseHero> team2) {
-        BaseHero nearestFoe = findNearest(teamFoe);
+
     }
     @Override
     public String getInfo() {
