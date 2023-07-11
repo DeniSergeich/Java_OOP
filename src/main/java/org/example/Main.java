@@ -3,6 +3,7 @@ package org.example;
 import Hero.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
@@ -10,26 +11,39 @@ public class Main {
 
         ArrayList<BaseHero> teamOne = new ArrayList<>();
         ArrayList<BaseHero> teamTwo = new ArrayList<>();
+        ArrayList<BaseHero> team = new ArrayList<>();
         fillList(teamOne,0);
         fillList(teamTwo,9);
-
-        for (BaseHero c: teamOne) {
-            System.out.println();
+        team.addAll(teamOne);
+        team.addAll(teamTwo);
+        team.sort(Comparator.comparingInt(BaseHero::getInitiative));
+        System.out.println("Команда 1:");
+        System.out.println();
+        teamOne.forEach(c -> System.out.println(c.getInfo()));
+        System.out.println();
+        System.out.println("Команда 2:");
+        System.out.println();
+        teamTwo.forEach(c -> System.out.println(c.getInfo()));
+        System.out.println();
+        System.out.println("*************************");
+        for (BaseHero c:
+             team) {
+            if(teamOne.contains(c)) c.step(teamTwo,teamOne);
+            else c.step(teamOne,teamTwo);
         }
-
+        System.out.println();
         System.out.println("Команда 1:");
         System.out.println();
         for (BaseHero c:
                 teamOne) {
-            c.lookAround(teamTwo);
+            c.getInfo();
         }
-
         System.out.println();
         System.out.println("Команда 2:");
         System.out.println();
         for (BaseHero c:
                 teamTwo) {
-            c.lookAround(teamOne);
+            c.getInfo();
         }
     }
 

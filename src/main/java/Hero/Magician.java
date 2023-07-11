@@ -11,11 +11,11 @@ public class Magician extends Magic {
         super.type = "Маг";
     }
     @Override
-    public void step(ArrayList<BaseHero> team) {
+    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> team2) {
 
     }
     @Override
     public String getInfo() {
-        return String.format("%s  Mp: %d",super.getInfo(), this.mana);
+        return String.format("%s  Mp:%d",super.getInfo(), this.mana);
     }
 }

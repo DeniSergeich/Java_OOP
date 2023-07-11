@@ -14,7 +14,7 @@ public class Peasant extends Warrior {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team) {
+    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> team2) {
 
     }
 

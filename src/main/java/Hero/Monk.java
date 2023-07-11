@@ -11,10 +11,10 @@ public class Monk extends Magic {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team) {
+    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> team2) {
     }
 
     public String getInfo() {
-        return String.format("%s  Mp: %d",super.getInfo(), this.mana);
+        return String.format("%s  Mp:%d",super.getInfo(), this.mana);
     }
 }

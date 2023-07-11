@@ -29,7 +29,7 @@ public abstract class BaseHero implements BaseHeroInterfase{
         this.coordinates = new Coordinates(x,y);
     }
     public String getInfo() {
-        return String.format("%s  Hp: %d ",
+        return String.format("%s  Hp:%d ",
                 this.name, this.hp);
     }
 
@@ -41,11 +41,11 @@ public abstract class BaseHero implements BaseHeroInterfase{
         return coordinates;
     }
 
-    public void lookAround(ArrayList<BaseHero> team){
-        BaseHero nearestFoe = findNearest(team);
-        System.out.printf("%s заметил %s на расстоянии %d\n", this.name, nearestFoe.toString(),
-                coordinates.getDistance(nearestFoe.getCoordinates()));
-    }
+//    public void lookAround(ArrayList<BaseHero> team){
+//        BaseHero nearestFoe = findNearest(team);
+//        System.out.printf("%s заметил %s на расстоянии %d\n", this.name, nearestFoe.toString(),
+//                coordinates.getDistance(nearestFoe.getCoordinates()));
+//    }
 
     protected BaseHero findNearest(ArrayList<BaseHero> team) {
         BaseHero nearest = team.get(0);
@@ -55,6 +55,9 @@ public abstract class BaseHero implements BaseHeroInterfase{
             }
         }
         return nearest;
+    }
+    public int getInitiative(){
+        return this.initiative;
     }
 
 }

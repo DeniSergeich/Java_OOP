@@ -14,12 +14,13 @@ public class Spearman extends Warrior {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team) {
-        BaseHero nearestFoe = findNearest(team);
+    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> team2) {
+
     }
 
     @Override
     public String getInfo() {
+
         return super.getInfo();
     }
 }
