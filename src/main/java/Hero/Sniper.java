@@ -5,17 +5,18 @@ import java.util.ArrayList;
 
 public class Sniper extends Shooter {
     public Sniper(int x, int y) {
-        super(x, y);
+        super(4, x, y);
         super.type = "Снайпер";
     }
 
     @Override
     public void step(ArrayList<BaseHero> teamFoe, ArrayList<BaseHero> teamFriend) {
-        if (super.hp == 0 || super.arrow ==0) return;
+        if (super.hp <= 0 || super.arrow == 0) return;
         //this.lookAround(teamFoe);
         BaseHero target = this.findNearest(teamFoe);
         this.attack(target);
-        if(!this.findPeasant(teamFoe)) this.arrow -= 1;
+        if(!this.findPeasant(teamFriend)) this.arrow -= 1;
+
     }
 
     @Override

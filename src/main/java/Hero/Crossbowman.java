@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Crossbowman extends Shooter {
     public Crossbowman(int x, int y){
-        super(x, y);
+        super(8,x, y);
         super.type = "Арбалетчик";
     }
     @Override
@@ -13,7 +13,7 @@ public class Crossbowman extends Shooter {
         //this.lookAround(teamFoe);
         BaseHero target = this.findNearest(teamFoe);
         this.attack(target);
-        if(!this.findPeasant(teamFoe)) this.arrow -= 1;
+        if(!this.findPeasant(teamFriend)) this.arrow -= 1;
     }
     @Override
     public String getInfo() {

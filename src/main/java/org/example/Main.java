@@ -8,7 +8,6 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-
         ArrayList<BaseHero> teamOne = new ArrayList<>();
         ArrayList<BaseHero> teamTwo = new ArrayList<>();
         ArrayList<BaseHero> team = new ArrayList<>();

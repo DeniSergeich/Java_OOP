@@ -61,13 +61,15 @@ public abstract class BaseHero implements BaseHeroInterfase{
     }
     public void attack(BaseHero target){
         target.hp -= this.damage;
+        System.out.printf("%s %s атакует %s %s, и наносит ему %d урона \n",this.type, this.name,target.type, target.name, this.damage);
     }
     public boolean findPeasant(ArrayList<BaseHero> team) {
-        boolean result = true;
+        boolean result = false;
         for (BaseHero person : team) {
-            result = person.type.equals("Крестьянин");
+            if (person.type == "Крестьянин") result = true;
         }
         return result;
     }
+
 
 }
