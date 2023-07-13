@@ -12,18 +12,22 @@ public abstract class Magic extends BaseHero{
     public void step(ArrayList<BaseHero> teamFoe, ArrayList<BaseHero> teamFriend){
         if (!this.isLife|| this.mana <= 0) return;
         BaseHero target = this.findNearestWounded(teamFriend);
-        //int health = this.getDamage();
-        int health = 10;
-        target.hp += health;
+        int health = this.getDamage();
+        if (target.hp + health > target.maxHp) {
+            health = target.maxHp - target.hp;
+            target.hp = target.maxHp;
+        }
+        else target.hp += health;
         this.mana -= health;
         System.out.printf("%s %s восстанавливает %s %s,  %d здоровья \n",this.type, this.name,target.type, target.name, health);
     }
     protected BaseHero findNearestWounded(ArrayList<BaseHero> team) {
         BaseHero character = team.get(0);
         for (BaseHero person : team) {
+            //if(person == character) continue;
             if (person.isLife && person.isWounded()) {
                 if (coordinates.getDistance(person.getCoordinates()) < coordinates.getDistance(character.getCoordinates())) {
-                    character = person;
+                    if(!person.equals(this)) character = person;
                 }
             }
         }

@@ -14,15 +14,6 @@ public class Crossbowman extends Shooter {
         this.speed = 3;
         this.isLife = true;
     }
-
-//    @Override
-//    public void step(ArrayList<BaseHero> teamFoe, ArrayList<BaseHero> teamFriend) {
-//        if (this.hp == 0 || this.arrow ==0) return;
-//        //this.lookAround(teamFoe);
-//        BaseHero target = this.findNearest(teamFoe);
-//        this.attack(target);
-//        if(!this.findPeasant(teamFriend)) this.arrow -= 1;
-//    }
     @Override
     public String getInfo() {
         return String.format("%s %s Hp:%d Arrows:%d",this.type, this.name, this.hp, this.arrow);

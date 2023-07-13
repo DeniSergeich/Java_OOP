@@ -13,13 +13,8 @@ public class Magician extends Magic {
         this.damage[0] = 8;
         this.damage[1] = 15;
         this.defense = 5;
-        this.initiative = 4;
+        this.initiative = 6;
         this.speed = 3;
         this.isLife = true;
     }
-    @Override
-    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> team2) {
-
-    }
-
 }
