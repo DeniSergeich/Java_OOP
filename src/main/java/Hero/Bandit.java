@@ -6,8 +6,16 @@ public class Bandit extends Warrior {
 
 
     public Bandit(int x, int y) {
-        super(x, y);
+        super(x,y);
         super.type = "Бандит";
+        this.hp = 30;
+        this.damage[0] = 5;
+        this.damage[1] = 10;
+        this.defense = 7;
+        this.initiative = 2;
+        this.speed = 2;
+        this.isLife = true;
+
     }
 
     @Override

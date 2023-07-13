@@ -40,6 +40,38 @@ public class Main {
         for (BaseHero person: teamTwo) {
             System.out.println(person.getInfo());
         }
+
+        for (BaseHero person:
+                team) {
+            if(teamOne.contains(person)) person.step(teamTwo,teamOne);
+            else person.step(teamOne,teamTwo);
+        }
+        System.out.println();
+        System.out.println("Команда 1:");
+        for (BaseHero person: teamOne) {
+            System.out.println(person.getInfo());
+        }
+        System.out.println();
+        System.out.println("Команда 2:");
+        for (BaseHero person: teamTwo) {
+            System.out.println(person.getInfo());
+        }
+
+        for (BaseHero person:
+                team) {
+            if(teamOne.contains(person)) person.step(teamTwo,teamOne);
+            else person.step(teamOne,teamTwo);
+        }
+        System.out.println();
+        System.out.println("Команда 1:");
+        for (BaseHero person: teamOne) {
+            System.out.println(person.getInfo());
+        }
+        System.out.println();
+        System.out.println("Команда 2:");
+        for (BaseHero person: teamTwo) {
+            System.out.println(person.getInfo());
+        }
     }
 
 
